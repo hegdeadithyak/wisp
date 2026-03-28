@@ -1,0 +1,56 @@
+{
+  "name": "local-copilot",
+  "displayName": "Local Copilot",
+  "publisher":"local",
+  "description": "CPU-powered local inline code completions via llama.cpp",
+  "version": "1.0.0",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "localCopilot.toggle",
+        "title": "Local Copilot: Toggle On/Off"
+      }
+    ],
+    "configuration": {
+      "title": "Local Copilot",
+      "properties": {
+        "localCopilot.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable Local Copilot suggestions"
+        },
+        "localCopilot.middlewareUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:3000",
+          "description": "URL of the Local Copilot middleware server"
+        },
+        "localCopilot.debounceMs": {
+          "type": "number",
+          "default": 300,
+          "description": "Milliseconds to wait after typing before requesting completion"
+        },
+        "localCopilot.maxTokens": {
+          "type": "number",
+          "default": 64,
+          "description": "Maximum tokens to generate per completion"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.24.0",
+    "typescript": "^5.3.3"
+  }
+}
