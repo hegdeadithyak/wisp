@@ -177,3 +177,11 @@ wisp/
     └── src/
         └── extension.ts             ← Provides autocomplete UI logic
 ```
+
+---
+
+## 🤝 Contributing
+
+**Please feel free to contribute!** Wisp is an open-source project that currently needs a lot of help to reach its full potential. This project can be 100 times better than it is right now. 
+
+Whether you are fixing bugs, optimizing inference performance, or adding new features, all contributions are highly appreciated! Please review our [Contributing Guidelines](CONTRIBUTING.md) before submitting (remember to keep your PRs neat and attach proofs of your changes).
